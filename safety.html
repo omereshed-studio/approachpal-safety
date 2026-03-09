@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safety Policy — Approach Pal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary:        #EE8C2B;
+      --primary-dark:   #D4791E;
+      --primary-light:  #F5A84E;
+      --bg:             #120C05;
+      --bg-mid:         #1C1208;
+      --surface:        #2A1F10;
+      --surface-variant:#332818;
+      --on-bg:          #F5F0E8;
+      --on-surface:     #CCBFA8;
+      --subtle:         #7A6A55;
+      --subtle-light:   #9E8E78;
+      --border:         #3D2A10;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--on-bg);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────────── */
+    header {
+      background-color: var(--bg-mid);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--on-bg);
+    }
+
+    header span {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--subtle);
+      margin-left: auto;
+    }
+
+    /* ── Main content ────────────────────────────────────────── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .hero {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--on-bg);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: var(--subtle-light);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .last-updated {
+      display: inline-block;
+      margin-top: 16px;
+      background-color: var(--surface-variant);
+      color: var(--subtle-light);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 99px;
+    }
+
+    /* ── Sections ────────────────────────────────────────────── */
+    section {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+
+    section h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--on-bg);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h3 .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    section p {
+      font-size: 15px;
+      color: var(--on-surface);
+      margin-bottom: 12px;
+    }
+
+    section p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: var(--on-surface);
+      padding: 6px 0 6px 24px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      opacity: 0.8;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--primary-light);
+      text-decoration: underline;
+    }
+
+    /* ── Data table ──────────────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background-color: var(--surface-variant);
+      color: var(--subtle-light);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .data-table th:first-child { border-radius: 8px 0 0 8px; }
+    .data-table th:last-child  { border-radius: 0 8px 8px 0; }
+
+    .data-table td {
+      padding: 10px 14px;
+      color: var(--on-surface);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-yes  { background-color: rgba(238, 140, 43, 0.18); color: var(--primary-light); }
+    .badge-no   { background-color: rgba(122, 106, 85, 0.20); color: var(--subtle-light); }
+
+    /* ── Highlight box ───────────────────────────────────────── */
+    .highlight {
+      background-color: var(--surface-variant);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .highlight p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--subtle);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--subtle-light);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero h2      { font-size: 26px; }
+      section       { padding: 24px 20px; }
+      main          { padding: 32px 16px 64px; }
+      .data-table   { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-dot">🤝</div>
+    <h1>Approach Pal</h1>
+    <span>Safety Policy</span>
+  </header>
+
+  <main>
+
+    <div class="hero">
+      <h2>App <span>Safety</span></h2>
+      <p>Transparency about how Approach Pal handles your data — aligned with Google Play's Data Safety requirements.</p>
+      <span class="last-updated">Last updated: March 2026</span>
+    </div>
+
+    <!-- 1. Purpose -->
+    <section>
+      <h3><span class="icon">🎯</span> Purpose of This Policy</h3>
+      <p>
+        This Safety Policy is provided to meet Google Play Store's Data Safety disclosure requirements. It describes the types of data Approach Pal collects, how that data is used, shared, and secured, and what controls you have as a user.
+      </p>
+      <p>
+        For the full details of our privacy practices, please also read our <a href="privacy.html">Privacy Policy</a>.
+      </p>
+    </section>
+
+    <!-- 2. Data Collected -->
+    <section>
+      <h3><span class="icon">📋</span> Data Collected &amp; Why</h3>
+      <p>The table below summarises every data type Approach Pal may collect:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Collected</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Personalise the coaching experience</td>
+          </tr>
+          <tr>
+            <td>Email address</td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Account authentication &amp; service communications</td>
+          </tr>
+          <tr>
+            <td>User-generated content (chat messages)</td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Provide context-aware AI coaching responses</td>
+          </tr>
+          <tr>
+            <td>App activity (missions, progress)</td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Display stats and track personal growth</td>
+          </tr>
+          <tr>
+            <td>App interaction &amp; crash logs</td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Diagnose bugs and improve stability (Firebase)</td>
+          </tr>
+          <tr>
+            <td>Purchase history / subscription status</td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Manage premium access via RevenueCat</td>
+          </tr>
+          <tr>
+            <td>Precise location</td>
+            <td><span class="badge badge-no">No</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Contacts or photos</td>
+            <td><span class="badge badge-no">No</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Health or biometric data</td>
+            <td><span class="badge badge-no">No</span></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3. Data Sharing -->
+    <section>
+      <h3><span class="icon">🔗</span> Data Sharing</h3>
+      <p>We share limited data only with the following trusted third-party providers required to operate the app:</p>
+      <ul>
+        <li><strong>Firebase / Google</strong> — authentication, cloud database, analytics, and crash reporting.</li>
+        <li><strong>RevenueCat</strong> — subscription management. Payment details are handled by the app store (Google Play) and never passed to us.</li>
+        <li><strong>OpenAI</strong> — AI responses are generated by processing your chat messages. OpenAI's API data policies apply.</li>
+      </ul>
+      <div class="highlight">
+        <p>We <strong>do not</strong> sell or share your personal data with advertisers, data brokers, or any other third parties for commercial purposes.</p>
+      </div>
+    </section>
+
+    <!-- 4. Data Security -->
+    <section>
+      <h3><span class="icon">🛡️</span> Data Security</h3>
+      <p>We take the following measures to protect your data:</p>
+      <ul>
+        <li>All data is transmitted over encrypted connections (HTTPS / TLS).</li>
+        <li>Data is stored in Firebase with strict security rules limiting access to authenticated users only.</li>
+        <li>Authentication is handled via Firebase Auth — passwords are never stored in plain text.</li>
+        <li>Access to production systems is restricted to authorised personnel only.</li>
+      </ul>
+    </section>
+
+    <!-- 5. Data Deletion -->
+    <section>
+      <h3><span class="icon">🗑️</span> Data Deletion</h3>
+      <p>
+        You can request deletion of your account and all associated personal data at any time by contacting us at <a href="mailto:support@approachpal.app">support@approachpal.app</a>.
+      </p>
+      <p>
+        Upon a verified deletion request, your personal data will be permanently removed from our systems within <strong>30 days</strong>. Anonymised, aggregated analytics data that cannot identify you may be retained.
+      </p>
+    </section>
+
+    <!-- 6. Age Requirements -->
+    <section>
+      <h3><span class="icon">🔞</span> Age Requirements</h3>
+      <p>
+        Approach Pal is intended for users aged <strong>17 and older</strong>. The app is not directed at children under 17, and we do not knowingly collect data from minors.
+      </p>
+      <p>
+        If you believe a minor has created an account, please contact us immediately and we will delete the account and all associated data.
+      </p>
+    </section>
+
+    <!-- 7. User Controls -->
+    <section>
+      <h3><span class="icon">✅</span> Your Controls</h3>
+      <p>As a user of Approach Pal, you can:</p>
+      <ul>
+        <li>Access and review your personal data by contacting support.</li>
+        <li>Request correction of inaccurate data.</li>
+        <li>Request full deletion of your account and data.</li>
+        <li>Manage or cancel your subscription at any time via Google Play subscriptions.</li>
+        <li>Opt out of analytics by disabling analytics permissions in your device settings.</li>
+      </ul>
+    </section>
+
+    <!-- 8. Policy Updates -->
+    <section>
+      <h3><span class="icon">📝</span> Policy Updates</h3>
+      <p>
+        This Safety Policy may be updated to reflect changes in the app or legal requirements. The "Last updated" date at the top of this page will reflect the most recent revision.
+      </p>
+      <p>
+        Significant changes will be communicated via an in-app notification.
+      </p>
+    </section>
+
+    <!-- 9. Contact -->
+    <section>
+      <h3><span class="icon">💬</span> Contact Us</h3>
+      <p>For any safety, privacy, or data-related questions:</p>
+      <p>📧 <a href="mailto:support@approachpal.app">support@approachpal.app</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Approach Pal. All rights reserved.</p>
+    <p style="margin-top: 6px;">
+      <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="mailto:support@approachpal.app">Contact Us</a>
+    </p>
+  </footer>
+
+</body>
+</html>
